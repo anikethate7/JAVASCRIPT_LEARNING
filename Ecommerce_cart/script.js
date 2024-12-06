@@ -36,6 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   productList.addEventListener("click", (e) => {
-    if(e.target.tagName === "BUTTON") return;
+    if(e.target.tagName === "BUTTON") {
+       const productId =parseInt( e.target.getAttribute("data-id"));
+      const product = product.find(p => p.id === productId)
+      addToCart(product);
+    }
   });
 });
